@@ -4,11 +4,11 @@ Import('rtconfig')
 src   = []
 cwd   = GetCurrentDir()
 
+src += ['libraries/*.c']
+
 # add bmi160 src files.
 if GetDepend('PKG_BMI160_BMX160_USING_SENSOR_V1'):
     src += ['sensor_bosch_bmx160.c']
-    src += ['libraries/bmi160.c']
-    src += ['libraries/bmm150.c']
 
 # add bmi160 include path.
 path  = [cwd, cwd + '/libraries']
