@@ -549,7 +549,7 @@ static int _get_fifo_data(struct rt_sensor_device *sensor, void *buf, rt_size_t 
     return len;
 }
 
-static rt_size_t _fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
+static RT_SIZE_TYPE _fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
 {
     if (sensor->config.mode == RT_SENSOR_MODE_FIFO)
         return _get_fifo_data(sensor, buf, len);
