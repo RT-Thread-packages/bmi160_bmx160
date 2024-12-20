@@ -2,11 +2,13 @@
 #define SENSOR_BOS_BMI160_H__
 
 #include <rtthread.h>
+#include <rtdevice.h>
+
 #if defined(RT_VERSION_CHECK)
-    #if (RTTHREAD_VERSION >= RT_VERSION_CHECK(5, 1, 0))
-        #include "drivers/sensor.h"
+    #if (RTTHREAD_VERSION >= RT_VERSION_CHECK(5, 0, 2))
+        #define RT_SIZE_TYPE   rt_ssize_t
     #else
-        #include "sensor.h"
+        #define RT_SIZE_TYPE   rt_size_t
     #endif
 #endif
 
