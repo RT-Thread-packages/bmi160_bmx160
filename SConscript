@@ -4,7 +4,7 @@ Import('rtconfig')
 src   = []
 cwd   = GetCurrentDir()
 
-src += ['libraries/*.c']
+src += Glob(cwd + '/libraries/*.c')
 
 if GetDepend('PKG_BMI160_BMX160_USING_SENSOR_V1'):
     src += ['sensor_bosch_bmx160.c']
